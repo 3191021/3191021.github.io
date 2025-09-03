@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools | BreakRoom</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="BreakRoom Logo" />
+      <h1>BreakRoom</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="#" onclick="openModal()">Study Break</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <h1>School Tools & Resources</h1>
+    <p>Your go-to hub for calculators, planners, timers, and more.</p>
+  </section>
+
+  <!-- ===== TOOLS GRID ===== -->
+  <section class="grid">
+    <!-- Calculator -->
+    <a class="card" href="https://www.desmos.com/scientific" target="_blank">
+      <h3>Scientific Calculator</h3>
+      <p>Advanced math at your fingertips.</p>
+    </a>
+
+    <!-- Pomodoro Timer -->
+    <a class="card" href="https://pomofocus.io/" target="_blank">
+      <h3>Pomodoro Timer</h3>
+      <p>Stay productive with focus sessions.</p>
+    </a>
+
+    <!-- Planner -->
+    <a class="card" href="https://calendar.google.com/" target="_blank">
+      <h3>Planner & Calendar</h3>
+      <p>Plan your schedule efficiently.</p>
+    </a>
+
+    <!-- Homework Helper -->
+    <a class="card" href="https://www.khanacademy.org/" target="_blank">
+      <h3>Homework Help</h3>
+      <p>Videos and exercises for tough subjects.</p>
+    </a>
+
+    <!-- AI Assistant -->
+    <a class="card" href="https://chat.openai.com/" target="_blank">
+      <h3>AI Helper</h3>
+      <p>Ask questions and get instant answers.</p>
+    </a>
+
+    <!-- NetInformer -->
+    <a class="card" href="https://netinformer.github.io/" target="_blank">
+      <h3>NetInformer</h3>
+      <p>Check your IP, headers, and network info.</p>
+    </a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>&copy; 2025 BreakRoom. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== PANIC BUTTON ===== -->
+  <button id="panicBtn" class="panic-button">!</button>
+
+  <!-- ===== PASSWORD MODAL ===== -->
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <h2>Enter Password</h2>
+      <input type="password" id="passwordInput" placeholder="Password">
+      <button class="primary-btn" onclick="checkPassword()">Unlock</button>
+      <button class="exit-button" onclick="closeModal()">Cancel</button>
+      <p id="errorMsg" class="error"></p>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // PANIC BUTTON
+    document.getElementById('panicBtn').addEventListener('click', () => {
+      window.location.href = "https://classroom.google.com";
+    });
+
+    // PASSWORD MODAL
+    const modal = document.getElementById('passwordModal');
+    const errorMsg = document.getElementById('errorMsg');
+    const correctPassword = "breakroom2025";
+
+    function openModal() {
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value;
+      if (input === correctPassword) {
+        window.location.href = "games.html";
+      } else {
+        errorMsg.textContent = "Incorrect password. Try again.";
+      }
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+</body>
+</html>
