@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BreakRoom</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="assets/favicon.png">
+  <script defer src="scripts/main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="BreakRoom Logo">
+      <h1>BreakRoom</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="#" onclick="showPasswordPrompt()">Study Break 🔒</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to BreakRoom</h2>
+    <p>Your all-in-one hub for school resources and study breaks.</p>
+    <button class="exit-button" onclick="emergencyExit()">Emergency Exit</button>
+  </section>
+
+  <section class="resources">
+    <h3>Quick Resources</h3>
+    <div class="grid">
+      <a href="tools.html" class="card">
+        <h4>School Tools</h4>
+        <p>Calculators, planners, and more.</p>
+      </a>
+      <a href="https://classroom.google.com" target="_blank" class="card">
+        <h4>Google Classroom</h4>
+        <p>Jump right to your assignments.</p>
+      </a>
+      <a href="#" onclick="showPasswordPrompt()" class="card">
+        <h4>Study Break 🔒</h4>
+        <p>Enter password to unlock.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Password Prompt Modal -->
+  <div id="passwordModal" class="modal">
+    <div class="modal-content">
+      <h3>Enter Password</h3>
+      <input type="password" id="passwordInput" placeholder="Password">
+      <button onclick="checkPassword()">Unlock</button>
+      <button onclick="closeModal()" class="cancel-btn">Cancel</button>
+      <p id="errorMessage" class="error"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BreakRoom. Built for students, by students.</p>
+  </footer>
+</body>
+</html>
