@@ -15,9 +15,8 @@
       <h1>BreakRoom</h1>
     </div>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="games.html">Home</a>
       <a href="tools.html">Tools</a>
-      <a href="#" onclick="showPasswordPrompt()">Study Break 🔒</a>
     </nav>
   </header>
 
@@ -38,25 +37,8 @@
         <h4>Google Classroom</h4>
         <p>Jump right to your assignments.</p>
       </a>
-      <a href="#" onclick="showPasswordPrompt()" class="card">
-        <h4>Study Break 🔒</h4>
-        <p>Enter password to unlock.</p>
-      </a>
     </div>
   </section>
-
-  <!-- Password Prompt Modal -->
-  <div id="passwordModal" class="modal" style="display: flex; align-items: center; justify-content: center;">
-    <div class="modal-content" style="display: flex; flex-direction: column; align-items: center;">
-      <h3>Enter Password</h3>
-      <input type="password" id="passwordInput" placeholder="Password" style="margin-bottom: 10px;">
-      <div style="display: flex; gap: 10px;">
-        <button onclick="checkPassword()">Unlock</button>
-        <button onclick="closeModal()" class="cancel-btn">Cancel</button>
-      </div>
-      <p id="errorMessage" class="error" style="margin-top: 10px;"></p>
-    </div>
-  </div>
 
   <footer>
     <p>© 2025 BreakRoom. Built for students, by students.</p>
