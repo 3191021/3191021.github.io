@@ -2,36 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Break - BreakRoom</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="icon" href="assets/favicon.png">
-  <script defer src="scripts/main.js"></script>
+  <title>Password Protected Redirect</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h2 {
+      margin-bottom: 24px;
+      color: #222;
+      font-weight: 600;
+    }
+    form {
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 300px;
+    }
+    input[type="password"] {
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      transition: border 0.2s;
+    }
+    input[type="password"]:focus {
+      border: 1.5px solid #4a90e2;
+    }
+    button[type="submit"] {
+      background: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: #357ab8;
+    }
+  </style>
+  <script>
+    function checkPassword(event) {
+      event.preventDefault();
+      const correctPassword = "yourpassword"; // Change this to your desired password
+      const input = document.getElementById("password").value;
+      if (input === correctPassword) {
+        window.location.href = "/jarbeefis/james";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
 </head>
-<body onload="verifyAccess()">
-  <header>
-    <div class="logo">
-      <img src="assets/logo.png" alt="BreakRoom Logo">
-      <h1>BreakRoom</h1>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="tools.html">Tools</a>
-      <a href="games.html" class="active">Study Break</a>
-    </nav>
-  </header>
-
-  <section class="games">
-    <h2>Unblocked Games</h2>
-    <p>Here are your games. Have fun! 🎮</p>
-    <div class="grid">
-      <!-- You can embed your games here later -->
-      <p>Games coming soon...</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 BreakRoom.</p>
-  </footer>
+<body>
+  <h2>Enter Password to Continue</h2>
+  <form onsubmit="checkPassword(event)">
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
